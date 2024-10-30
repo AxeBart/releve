@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relevé des notes - Université Catholique du Congo</title>
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #dcebf7;
+            padding: 20px;
+            text-align: center;
+            box-sizing: border-box;
+            margin: 0;
+        }
+        .header img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .header h1, .header h2 {
+            margin: 0;
+            color: #333;
+        }
+        .header h1 {
+            font-size: 1.5em;
+        }
+        .header h2 {
+            font-size: 1.2em;
+            margin-top: 5px;
+            color: #666;
+        }
+        .info {
+            display: flex; /* Utiliser flexbox pour la mise en page */
+            justify-content: space-between; /* Espacement entre les éléments */
+            padding: 10px;
+            background-color: #e6f3ff;
+            font-weight: bold;
+            color: #333;
+        }
+        .student-info {
+            flex: 1; /* Prendre l'espace disponible */
+            margin-right: 20px; /* Espacement entre les deux divs */
+        }
+        .license-info {
+            flex: 0 0 auto; /* Ne pas laisser cette div s'étendre */
+        }
+        .semester {
+            background-color: #d8f5e3;
+            color: #333;
+            padding: 5px;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .status {
+            font-weight: bold;
+        }
+        .status.v {
+            color: green;
+        }
+        .status.nd {
+            color: red;
+        }
+        .footer {
+            padding: 10px;
+            background-color: #e6f3ff;
+            text-align: center;
+            font-size: 0.9em;
+            color: #333;
+        }
+    </style> -->
+    <style>
+        :root {
+            font-family: Helvetica, sans-serif;
+            line-height: 2rem;
+            width: 100%;
+        }
+
+        .container {
+            margin: auto;
+            width: 60%;
+            /* border: solid gray 1px; */
+            /* padding: 10px 40px; */
+        }
+
+        .status {
+            font-weight: bold;
+        }
+
+        .status.v {
+            color: rgb(27, 196, 27);
+        }
+
+        .status.nd {
+            color: red;
+        }
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .name {
+                text-align: center;
+            }
+        }
+
+        .line {
+            height: 1px;
+            background-color: rgba(128, 128, 128, 0.219);
+            margin: 20px 0;
+        }
+
+        .info {
+            background: rgb(182, 213, 241);
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+
+            .license-info {
+                font-weight: bold;
+            }
+        }
+
+        .entetes {
+            background: rgb(182, 213, 241);
+        }
+
+        table {
+            /* border: 0; */
+            width: 100%;
+            border-spacing: 1px;
+            /* border-color: green; */
+
+        }
+
+        .semester {
+            background-color: aquamarine;
+            width: 100%;
+            text-align: left;
+        }
+
+        .foot {
+            background-color: lightgrey;
+        }
+
+        .final {
+            display: flex;
+
+            padding: 5px 20px;
+            font-style: italic;
+        }
+
+        .final>* {
+            width: 40%;
+        }
+
+
+
+        .autre {
+            text-align: center;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .logo {
+            /* background-image: url("./ucc.jpg"); */
+            background-size: cover;
+            /* height: 100px; width: 100px;; */
+
+        }
+
+        img {
+            width: 100px;
+        }
+
+        .profile {
+            img {
+                border-radius: 100%;
+            }
+        }
+
+        td,
+        th {
+            padding: 8px;
+
+        }
+
+        @media screen and (max-width: 400px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="title">
+            <div class="logo">
+                <img src="./ucc.jpg" style="object-fit: cover;" sizes="5" alt="Logo UCC">
+            </div>
+            <div class="name">
+
+                <h1 style="color: rgb(35, 35, 238);">UNIVERSITÉ CATHOLIQUE DU CONGO</h1>
+                <h2>2023-2024</h2>
+                <h2>RELEVÉ GÉNÉRAL DES NOTES<br>Deuxième session</h2>
+            </div>
+            <div class="profile">
+                <img src="./profile.jpg" style="object-fit: cover;" alt="">
+            </div>
+        </div>
+        <div class="line"></div>
+
+        <div class="info">
+            <div class="">
+                <div class="license-info">MPUTAKIESE MAFUTA MARIA</div>
+                <div class="">Matricule : 1234/CATO/045</div>
+            </div>
+
+            <div class="license-info">DEUXIÈME LICENCE - FD</div>
+        </div>
+
+        <!-- Premier Semestre -->
+        <div class="line"></div>
+
+
+        <table>
+            <tr class="entetes" cellspacing="0">
+                <th>#</th>
+                <th>COURS</th>
+                <th>CRÉDITS</th>
+                <th>NOTE MAXIMUM</th>
+                <th>NOTE OBTENUE</th>
+                <th>STATUT</th>
+            </tr>
+            <tr>
+                <th colspan="6" class="semester">PREMIER SEMESTRE</th>
+            </tr>
+
+            <tr>
+                <td class="autre">1</td>
+                <td class="cours">Structure et droit des institutions trad. Africaines</td>
+                <td class="autre">3</td>
+                <td class="autre">20</td>
+                <td class="autre">14</td>
+                <td class="autre">V</td>
+            </tr>
+            <tr>
+                <td class="autre">2</td>
+                <td>Droit coutumier Congolais</td>
+                <td class="autre">3</td>
+                <td class="autre">20</td>
+                <td class="autre">15</td>
+                <td class="autre">V</td>
+            </tr>
+            <tr>
+                <td class="autre">3</td>
+                <td>Droit constitutionnel congolais</td>
+                <td class="autre">5</td>
+                <td class="autre">30</td>
+                <td class="autre">22</td>
+                <td class="autre">V</td>
+            </tr>
+            <tr>
+                <td class="autre">4</td>
+                <td>Méthodes de recherches scientifique et juridique</td>
+                <td class="autre">3</td>
+                <td class="autre">20</td>
+                <td class="autre">14</td>
+                <td class="autre">V</td>
+            </tr>
+            <tr>
+                <td class="autre">5</td>
+                <td>Histoire du droit, des idées politiques, faits socio.</td>
+                <td class="autre">5</td>
+                <td class="autre">40</td>
+                <td class="autre">28</td>
+                <td class="autre">V</td>
+            </tr>
+            <tr>
+                <td class="autre">6</td>
+                <td>Droit civil I et les biens</td>
+                <td class="autre">5</td>
+                <td class="autre">40</td>
+                <td class="autre">29</td>
+                <td class="autre">V</td>
+            </tr>
+            <tr>
+                <td class="autre">7</td>
+                <td>Droit pénal général</td>
+                <td class="autre">5</td>
+                <td class="autre">40</td>
+                <td class="autre">26</td>
+                <td class="autre">V</td>
+            </tr>
+            <tr>
+                <td class="autre">8</td>
+                <td>Initiation aux problèmes de l'environnement</td>
+                <td class="autre">3</td>
+                <td class="autre">20</td>
+                <td class="autre">12</td>
+                <td class="autre">V</td>
+            </tr>
+            <!-- footer -->
+            <tr class="foot">
+                <th class="left">Total</th>
+                <td class="left">153/200</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="status nd"></td>
+            </tr>
+            <tr class="foot">
+                <td class="left">Pourcentage</td>
+                <th class="left">76.5%</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="status nd"></td>
+            </tr>
+            <tr class="foot">
+                <td class="left">Pourcentage credit</td>
+                <th class="left">27/30</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="status nd"></td>
+            </tr>
+
+
+            <!-- Deuxième Semestre -->
+
+            <tr>
+                <th colspan="6" class="semester">DEUXIÈME SEMESTRE</th>
+            </tr>
+
+
+            <tr>
+                <td class="autre">1</td>
+                <td class="cours">Comptabilité générale</td>
+                <td class="autre">3</td>
+                <td class="autre">20</td>
+                <td class="autre">13</td>
+                <td class="autre">V</td>
+            </tr>
+            <tr>
+                <td class="autre">2</td>
+                <td>Finances publiques</td>
+                <td class="autre">3</td>
+                <td class="autre">20</td>
+                <td class="autre">12</td>
+                <td class="autre">V</td>
+            </tr>
+            <tr>
+                <td class="autre">3</td>
+                <td>Statistiques descriptives</td>
+                <td class="autre">3</td>
+                <td class="autre">20</td>
+                <td class="autre">14</td>
+                <td class="autre">V</td>
+            </tr>
+            <tr>
+                <td class="autre">4</td>
+                <td>Procédure pénale</td>
+                <td class="autre">5</td>
+                <td class="autre">30</td>
+                <td class="autre">19</td>
+                <td class="autre">V</td>
+            </tr>
+            <tr>
+                <td class="autre">5</td>
+                <td>Droit civil II les obligations</td>
+                <td class="autre">5</td>
+                <td class="autre">50</td>
+                <td class="autre">32</td>
+                <td class="autre">V</td>
+            </tr>
+            <tr>
+                <td class="autre">6</td>
+                <td>Rhétorique juridique</td>
+                <td class="autre">3</td>
+                <td class="autre">20</td>
+                <td class="autre">15</td>
+                <td class="autre">V</td>
+            </tr>
+            <tr>
+                <td class="autre">7</td>
+                <td>Législation en matière économique</td>
+                <td class="autre">3</td>
+                <td class="autre">20</td>
+                <td class="autre">14</td>
+                <td class="autre">V</td>
+            </tr>
+            <tr>
+                <td class="autre">8</td>
+                <td>Christianisme et mariage traditionnel africain</td>
+                <td class="autre">3</td>
+                <td class="autre">20</td>
+                <td class="autre">10</td>
+                <td class="autre">NV</td>
+            </tr>
+
+            <!-- footer -->
+            <tr class="foot">
+                <th class="left">Total</th>
+                <td class="left">138/210</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="status nd"></td>
+            </tr>
+            <tr class="foot">
+                <td class="left">Pourcentage</td>
+                <th class="left">65.71%</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="status nd"></td>
+            </tr>
+            <tr class="foot">
+                <td class="left">Pourcentage credit</td>
+                <th class="left">24/30</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="status nd"></td>
+            </tr>
+        </table>
+        <div class="line"></div>
+        <div class="foot final">
+            <div class="">
+                <span>Total note : </span><span style="font-weight: bold;">291/410</span><br>
+                <span>Pourcentage : </span><span style="font-weight: bold;">72%</span><br>
+                <span>Total credits : </span><span style="font-weight: bold;">51/60</span><br>
+                <span>Pourcentage credit : </span><span style="font-weight: bold;">74</span><br>
+            </div>
+
+            <div class="">
+                <span>Nombre d'echecs : </span><span style="font-weight: bold;">1</span><br>
+                <span>Cote manquante : </span><span style="font-weight: bold;">0</span><br>
+                <span>Mention : </span><span style="font-weight: bold;">AA</span><br>
+            </div>
+        </div>
+
+        <!-- <div class="footer">
+            <p>Fait à Kinshasa, le 28 octobre 2024</p>
+            <p>Signature de l'étudiant</p>
+        </div> -->
+    </div>
+
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relevé de Notes - Université Catholique du Congo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #2E3B4E;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        .highlight {
+            background-color: #e9f7ef;
+        }
+
+        .total-section {
+            font-weight: bold;
+            text-align: right;
+            padding-right: 10px;
+            margin-top: 15px;
+        }
+
+        .validation-section {
+            border-top: 2px solid #333;
+            padding-top: 15px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>UNIVERSITÉ CATHOLIQUE DU CONGO</h1>
+        <h2>Relevé Général des Notes - Deuxième Session</h2>
+        <p>Année académique : 2021 - 2024</p>
+        <p>Nom de l'étudiant(e) : MPUTAKESE MAFUTA MARIA</p>
+        <p>Matricule : 22/UCC/0534/23</p>
+        <p>Niveau : Deuxième Licence - FD</p>
+
+        <h2>Premier Semestre</h2>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>COURS</th>
+                <th>CRÉDITS</th>
+                <th>NOTE MAXIMUM</th>
+                <th>NOTE OBTENUE</th>
+                <th>STATUT</th>
+            </tr>
+           
+        </table>
+        <div class="total-section">
+            <p>Total crédits : 27/30</p>
+            <p>Total note : 153/200</p>
+            <p>Pourcentage : 76.5%</p>
+        </div>
+
+        <h2>Deuxième Semestre</h2>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>COURS</th>
+                <th>CRÉDITS</th>
+                <th>NOTE MAXIMUM</th>
+                <th>NOTE OBTENUE</th>
+                <th>STATUT</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Comptabilité générale</td>
+                <td>3</td>
+                <td>20</td>
+                <td>13</td>
+                <td>V</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Finances publiques</td>
+                <td>3</td>
+                <td>20</td>
+                <td>12</td>
+                <td>V</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Statistiques descriptives</td>
+                <td>3</td>
+                <td>20</td>
+                <td>14</td>
+                <td>V</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Procédure pénale</td>
+                <td>5</td>
+                <td>30</td>
+                <td>19</td>
+                <td>V</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Droit civil II les obligations</td>
+                <td>5</td>
+                <td>50</td>
+                <td>32</td>
+                <td>V</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Rhétorique juridique</td>
+                <td>3</td>
+                <td>20</td>
+                <td>15</td>
+                <td>V</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Législation en matière économique</td>
+                <td>3</td>
+                <td>20</td>
+                <td>14</td>
+                <td>V</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Christianisme et mariage traditionnel africain</td>
+                <td>3</td>
+                <td>20</td>
+                <td>10</td>
+                <td>NV</td>
+            </tr>
+        </table>
+        <div class="total-section">
+            <p>Total crédits : 24/30</p>
+            <p>Total note : 138/210</p>
+            <p>Pourcentage : 65.71%</p>
+        </div>
+
+        <div class="validation-section">
+            <p>Total général des notes : 291/410</p>
+            <p>Pourcentage global : 72%</p>
+            <p>Pourcentage crédit : 74%</p>
+            <p>Nombre d'échecs : 1</p>
+            <p>Cotes manquantes : 0</p>
+            <p>Mention : AA</p>
+        </div>
+    </div>
+</body>
+
+</html> -->
